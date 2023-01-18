@@ -1,0 +1,46 @@
+//All Directions
+@for $i from 1 through 20 {
+  .p-#{$i} {
+    padding: 1rem * $i;
+  }
+}
+
+//Horizontal
+@for $i from 1 through 20 {
+  .px-#{$i} {
+    padding-left: 1rem * $i;
+    padding-right: 1rem * $i;
+  }
+}
+
+//Vertical
+@for $i from 1 through 20 {
+  .py-#{$i} {
+    padding-top: 1rem * $i;
+    padding-bottom: 1rem * $i;
+  }
+}
+
+@for $i from 1 through 20 {
+  .pt-#{$i} {
+    padding-top: 1rem * $i;
+  }
+}
+
+@for $i from 1 through 20 {
+  .pr-#{$i} {
+    padding-right: 1rem * $i;
+  }
+}
+
+@for $i from 1 through 20 {
+  .pb-#{$i} {
+    padding-bottom: 1rem * $i;
+  }
+}
+
+@for $i from 1 through 20 {
+  .pl-#{$i} {
+    padding-left: 1rem * $i;
+  }
+}
