@@ -1,0 +1,39 @@
+@use "../Base/fontSizes" as font;
+
+.question-detail {
+  height: calc(100vh - 8rem);
+  position: relative;
+  &-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 70%;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+    hr {
+      background-color: #ccc;
+    }
+
+    &-left,
+    &-right {
+      width: 50%;
+      height: 100%;
+    }
+
+    &-left {
+      &-question {
+        font-size: font.$font-2xl;
+      }
+
+      &-options {
+        margin-top: 2rem;
+      }
+    }
+  }
+}
