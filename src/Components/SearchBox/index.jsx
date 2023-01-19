@@ -1,12 +1,12 @@
 import React from 'react'
 
-//Fontawesome
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-
 //Redux
 import { useSelector, useDispatch } from 'react-redux'
 import { changeSearchField } from '../../redux/searchFieldSlice'
+
+//Fontawesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 const SearchBox = () => {
     const data = useSelector(state => state.searchField.value)
