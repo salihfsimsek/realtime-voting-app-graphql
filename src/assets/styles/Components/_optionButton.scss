@@ -1,0 +1,13 @@
+@use "../Base/fontSizes" as font;
+
+.option-button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  &-label {
+    font-size: font.$font-md;
+    margin-left: 1rem;
+  }
+}
