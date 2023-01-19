@@ -18,6 +18,9 @@ const wsLink = new WebSocketLink({
 
 const httpLink = new HttpLink({
     uri: process.env.REACT_APP_HTTP_LINK,
+    headers: {
+        'x-hasura-admin-secret': process.env.REACT_APP_X_HASURA_ADMIN_SECRET
+    }
 })
 
 const splitLink = split(
