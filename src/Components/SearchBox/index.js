@@ -4,10 +4,21 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
+//Redux
+import { useSelector, useDispatch } from 'react-redux'
+import { changeSearchField } from '../../redux/searchFieldSlice'
+
 const SearchBox = () => {
+    const data = useSelector(state => state.searchField.value)
+    const dispatch = useDispatch()
+
+    const handleChange = e => {
+        dispatch(changeSearchField(e.target.value))
+    }
+
     return (
         <div className='searchbox'>
-            <input type='text' placeholder='Search' className='searchbox-input' />
+            <input type='text' placeholder='Search in Questions' className='searchbox-input' value={data} onChange={handleChange} />
             <FontAwesomeIcon icon={faMagnifyingGlass} className='searchbox-icon' />
         </div>
     )

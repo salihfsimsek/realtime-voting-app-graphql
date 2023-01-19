@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+//Redux
+import { store } from './redux/store'
+import { Provider } from 'react-redux'
+
 //GraphQL Client Configuration
 import { ApolloProvider } from '@apollo/client'
 import client from './apollo'
@@ -13,11 +17,13 @@ import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <ApolloProvider client={client}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ApolloProvider>
+  <Provider store={store}>
+    <ApolloProvider client={client}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ApolloProvider>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
