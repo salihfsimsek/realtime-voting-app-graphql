@@ -4,14 +4,20 @@ import { split, HttpLink } from '@apollo/client';
 import { getMainDefinition } from '@apollo/client/utilities';
 
 const wsLink = new WebSocketLink({
-    uri: 'ws://localhost:8080/v1/graphql',
+    uri: 'ws://wealthy-coral-64.hasura.app/v1/graphql',
+
     options: {
-        reconnect: true
+        reconnect: true,
+        connectionParams: {
+            headers: {
+                'x-hasura-admin-secret': 'jAY4iUUoI6HwLXlO36DIdkPx8s2gdp7QBHn3dKungcsiAVrQKLVeVaG50aSYj2Wz'
+            }
+        },
     }
 });
 
 const httpLink = new HttpLink({
-    uri: 'http://localhost:8080/v1/graphql'
+    uri: 'https://wealthy-coral-64.hasura.app/v1/graphql',
 })
 
 const splitLink = split(

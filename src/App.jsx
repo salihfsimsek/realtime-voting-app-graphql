@@ -15,7 +15,7 @@ import Header from "./Components/Header";
 
 const App = () => {
   const data = useSelector((state) => state.searchField.value);
-  console.log(data);
+
   return (
     <div>
       <Header />

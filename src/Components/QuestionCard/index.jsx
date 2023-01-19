@@ -3,8 +3,17 @@ import React from "react";
 //React router dom
 import { useNavigate } from "react-router-dom";
 
-const QuestionCard = () => {
+const QuestionCard = ({ question }) => {
   const navigate = useNavigate();
+
+  const calculateTotalAnswer = () => {
+    const sum = question.options.reduce(
+      (acc, current) => acc + current.votes_aggregate.aggregate.count,
+      0
+    );
+
+    return sum;
+  };
 
   return (
     <div
@@ -12,12 +21,10 @@ const QuestionCard = () => {
       onClick={() => navigate("/questions/2")}
     >
       <div className="question-card-container">
-        <span className="question-card-title">
-          Aklima tkailan bir soru var ve sizin tarafinizdan buna bir cevap
-          alabilir miyim diye merak ediorum? Guncel durum hakkinda ne
-          dusunyorsunuz?
+        <span className="question-card-title">{question.title}</span>
+        <span className="question-card-total">
+          Total Answer: {calculateTotalAnswer()}
         </span>
-        <span className="question-card-total">Total Answer: 25</span>
       </div>
     </div>
   );
