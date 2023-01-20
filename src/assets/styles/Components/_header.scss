@@ -1,10 +1,12 @@
 @use "../Base/fontSizes" as font;
 
 .header {
+  position: sticky;
+  top: 0;
   height: 8rem;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
+  background-color: white;
   .container {
     height: 100%;
     display: flex;

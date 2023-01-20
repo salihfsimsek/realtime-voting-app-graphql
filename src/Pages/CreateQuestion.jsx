@@ -102,7 +102,7 @@ const CreateQuestion = () => {
           />
           <Button
             text="Create Question"
-            className="col-12 mt-4"
+            className="col-12 mt-4 mb-4"
             type="submit"
             disabled={loading}
           />
