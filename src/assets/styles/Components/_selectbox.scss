@@ -1,0 +1,11 @@
+.selectbox {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background: white;
+  padding: 1rem;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}

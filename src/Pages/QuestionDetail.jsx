@@ -9,6 +9,11 @@ import {
   QUESTION_DETAIL_SUBSCRIPTION,
   NEW_VOTE_MUTATION,
 } from "../Queries/questions";
+
+//Localization
+import { useTranslation } from "react-i18next";
+
+//Components
 import OptionButton from "../Components/OptionButton";
 import SubmitButton from "../Components/SubmitButton";
 import VoteChart from "../Components/VoteChart";
@@ -16,6 +21,7 @@ import Loading from "../Components/Loading";
 
 const QuestionDetail = () => {
   const { questionId } = useParams();
+  const { t } = useTranslation();
   const { data, loading } = useSubscription(QUESTION_DETAIL_SUBSCRIPTION, {
     variables: {
       questionId: questionId,
@@ -58,7 +64,7 @@ const QuestionDetail = () => {
               />
             ))}
           </div>
-          {!isVoted && <SubmitButton text="Save" disabled={loadingVote} />}
+          {!isVoted && <SubmitButton text={t("Save")} disabled={loadingVote} />}
         </form>
         <hr />
         <div className="question-detail-container-right">
@@ -68,7 +74,7 @@ const QuestionDetail = () => {
             <VoteChart data={data.questions_by_pk.options} />
           ) : (
             <span className="question-detail-container-right-message">
-              Oy verdikten sonra sonuclar burada gosterilecektir.
+              {t("Results will be shown here after you vote")}
             </span>
           )}
         </div>

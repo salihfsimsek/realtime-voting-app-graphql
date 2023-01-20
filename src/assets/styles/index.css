@@ -1485,6 +1485,7 @@
   position: relative;
   width: 40rem;
   min-width: 20rem;
+  max-width: 40rem;
   height: 6rem;
   display: flex;
   align-items: center;
@@ -1661,6 +1662,34 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.navbar a {
+  font-size: calc(1.4rem + 0.2vw);
+  text-decoration: none;
+  color: gray;
+  margin-right: 2rem;
+  width: 6rem;
+  white-space: nowrap;
+}
+.navbar a:hover {
+  color: black;
+}
+
+.selectbox {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background: white;
+  padding: 1rem;
+  cursor: pointer;
+}
+.selectbox:focus {
+  outline: none;
 }
 
 .question-detail {

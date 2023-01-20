@@ -1,0 +1,20 @@
+@use "../Base/fontSizes" as font;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  a {
+    font-size: font.$font-lg;
+    text-decoration: none;
+    color: gray;
+    margin-right: 2rem;
+    width: 6rem;
+    white-space: nowrap;
+
+    &:hover {
+      color: black;
+    }
+  }
+}

@@ -2,6 +2,7 @@ import React from "react";
 
 //React router dom
 import { Link, useLocation } from "react-router-dom";
+import Navbar from "../Navbar";
 
 //Components
 import SearchBox from "../SearchBox";
@@ -16,6 +17,7 @@ const Header = () => {
           Vote App
         </Link>
         {pathname === "/" && <SearchBox />}
+        <Navbar />
       </div>
     </header>
   );

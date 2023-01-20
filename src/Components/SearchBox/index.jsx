@@ -14,7 +14,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 const SearchBox = () => {
   const data = useSelector((state) => state.searchField.value);
   const dispatch = useDispatch();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const [input, setInput] = useState(data);
 
