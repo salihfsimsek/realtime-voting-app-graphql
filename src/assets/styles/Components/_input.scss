@@ -1,0 +1,15 @@
+@use "../Base/fontSizes" as font;
+
+.input {
+  border: 1px solid #ccc;
+  height: 5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: font.$font-sm;
+  outline: none;
+  margin-bottom: 1rem;
+
+  &:focus {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+}

@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 
 //Components
 import OptionButton from "../Components/OptionButton";
-import SubmitButton from "../Components/SubmitButton";
+import Button from "../Components/Button";
 import VoteChart from "../Components/VoteChart";
 import Loading from "../Components/Loading";
 
@@ -73,7 +73,9 @@ const QuestionDetail = () => {
               />
             ))}
           </div>
-          {!isVoted && <SubmitButton text={t("Save")} disabled={loadingVote} />}
+          {!isVoted && (
+            <Button text={"Save"} disabled={loadingVote} type="submit" />
+          )}
         </form>
         <hr />
         <div className="question-detail-container-right">

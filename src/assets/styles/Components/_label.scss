@@ -1,0 +1,7 @@
+@use "../Base/fontSizes" as font;
+.label {
+  font-size: font.$font-md;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
