@@ -12,17 +12,15 @@ import {
 import OptionButton from "../Components/OptionButton";
 import SubmitButton from "../Components/SubmitButton";
 import VoteChart from "../Components/VoteChart";
+import Loading from "../Components/Loading";
 
 const QuestionDetail = () => {
   const { questionId } = useParams();
-  const { data, loading, error } = useSubscription(
-    QUESTION_DETAIL_SUBSCRIPTION,
-    {
-      variables: {
-        questionId: questionId,
-      },
-    }
-  );
+  const { data, loading } = useSubscription(QUESTION_DETAIL_SUBSCRIPTION, {
+    variables: {
+      questionId: questionId,
+    },
+  });
 
   const [newVote, { loading: loadingVote }] = useMutation(NEW_VOTE_MUTATION);
 
@@ -31,6 +29,7 @@ const QuestionDetail = () => {
 
   const submitVote = (e) => {
     e.preventDefault();
+    if (!selectedOption) return;
     newVote({
       variables: {
         input: {
@@ -40,7 +39,7 @@ const QuestionDetail = () => {
     }).then(() => setIsVoted(true));
   };
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <Loading type="full" />;
 
   return (
     <div className="question-detail">
@@ -63,7 +62,9 @@ const QuestionDetail = () => {
         </form>
         <hr />
         <div className="question-detail-container-right">
-          {isVoted ? (
+          {loadingVote ? (
+            <Loading type="fit" />
+          ) : isVoted ? (
             <VoteChart data={data.questions_by_pk.options} />
           ) : (
             <span className="question-detail-container-right-message">

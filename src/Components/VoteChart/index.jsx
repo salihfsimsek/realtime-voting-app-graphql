@@ -39,9 +39,6 @@ const VoteChart = ({ data }) => {
 
     setOptions(chartOptions);
     setSeries(dataSeries);
-
-    console.log(dataSeries);
-    console.log(chartOptions);
   }, [data]);
 
   return (

@@ -1,18 +1,24 @@
-import React from 'react'
+import React from "react";
 
 //React router dom
-import { Link } from 'react-router-dom'
-import SearchBox from '../SearchBox'
+import { Link, useLocation } from "react-router-dom";
+
+//Components
+import SearchBox from "../SearchBox";
 
 const Header = () => {
-    return (
-        <header className='header'>
-            <div className='container'>
-                <Link to='/' className='header-title'>Vote App</Link>
-                <SearchBox />
-            </div>
-        </header>
-    )
-}
+  const { pathname } = useLocation();
 
-export default Header
+  return (
+    <header className="header">
+      <div className="container">
+        <Link to="/" className="header-title">
+          Vote App
+        </Link>
+        {pathname === "/" && <SearchBox />}
+      </div>
+    </header>
+  );
+};
+
+export default Header;
