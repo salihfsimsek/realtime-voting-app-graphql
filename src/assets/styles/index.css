@@ -1612,4 +1612,16 @@
 }
 .question-detail-container-left-options {
   margin-top: 2rem;
+}
+.question-detail-container-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.question-detail-container-right-message {
+  font-size: calc(1.8rem + 0.2vw);
+}
+.question-detail-container-right #vote-chart {
+  width: 100%;
+  height: 100%;
 }/*# sourceMappingURL=index.css.map */

@@ -11,6 +11,7 @@ import {
 } from "../Queries/questions";
 import OptionButton from "../Components/OptionButton";
 import SubmitButton from "../Components/SubmitButton";
+import VoteChart from "../Components/VoteChart";
 
 const QuestionDetail = () => {
   const { questionId } = useParams();
@@ -27,8 +28,6 @@ const QuestionDetail = () => {
 
   const [selectedOption, setSelectedOption] = useState(null);
   const [isVoted, setIsVoted] = useState(false);
-
-  console.log(data);
 
   const submitVote = (e) => {
     e.preventDefault();
@@ -60,11 +59,17 @@ const QuestionDetail = () => {
               />
             ))}
           </div>
-          {!isVoted && <SubmitButton text="Save" />}
+          {!isVoted && <SubmitButton text="Save" disabled={loadingVote} />}
         </form>
         <hr />
         <div className="question-detail-container-right">
-          Oy verdikten sonra sonuclar burada gosterilecektir.
+          {isVoted ? (
+            <VoteChart data={data.questions_by_pk.options} />
+          ) : (
+            <span className="question-detail-container-right-message">
+              Oy verdikten sonra sonuclar burada gosterilecektir.
+            </span>
+          )}
         </div>
       </div>
     </div>

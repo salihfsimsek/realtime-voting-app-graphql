@@ -18,7 +18,7 @@ const QuestionCard = ({ question }) => {
   return (
     <div
       className="question-card col-12 col-sm-6 col-lg-4"
-      onClick={() => navigate("/questions/2")}
+      onClick={() => navigate(`/questions/${question.id}`)}
     >
       <div className="question-card-container">
         <span className="question-card-title">{question.title}</span>
