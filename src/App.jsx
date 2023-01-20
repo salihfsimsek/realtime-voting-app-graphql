@@ -1,8 +1,5 @@
 import React from "react";
 
-//Redux
-import { useSelector } from "react-redux";
-
 //React router dom
 import { Routes, Route } from "react-router-dom";
 
@@ -14,8 +11,6 @@ import QuestionDetail from "./Pages/QuestionDetail";
 import Header from "./Components/Header";
 
 const App = () => {
-  const data = useSelector((state) => state.searchField.value);
-
   return (
     <div>
       <Header />

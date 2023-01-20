@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 
+//i18n
+import { useTranslation, Trans } from "react-i18next";
+
 //Redux
 import { useSelector, useDispatch } from "react-redux";
 import { changeSearchField } from "../../redux/searchFieldSlice";
@@ -11,6 +14,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 const SearchBox = () => {
   const data = useSelector((state) => state.searchField.value);
   const dispatch = useDispatch();
+  const { t, i18n } = useTranslation();
 
   const [input, setInput] = useState(data);
 
@@ -25,7 +29,7 @@ const SearchBox = () => {
     <div className="searchbox">
       <input
         type="text"
-        placeholder="Search in Questions"
+        placeholder={t("Search in Questions")}
         className="searchbox-input"
         value={input}
         onChange={(e) => setInput(e.target.value)}
