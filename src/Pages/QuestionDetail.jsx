@@ -33,6 +33,15 @@ const QuestionDetail = () => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [isVoted, setIsVoted] = useState(false);
 
+  const calculateTotalAnswer = () => {
+    const sum = data.questions_by_pk.options.reduce(
+      (acc, current) => acc + current.votes_aggregate.aggregate.count,
+      0
+    );
+
+    return sum;
+  };
+
   const submitVote = (e) => {
     e.preventDefault();
     if (!selectedOption) return;
@@ -71,7 +80,10 @@ const QuestionDetail = () => {
           {loadingVote ? (
             <Loading type="fit" />
           ) : isVoted ? (
-            <VoteChart data={data.questions_by_pk.options} />
+            <VoteChart
+              data={data.questions_by_pk.options}
+              totalAns={calculateTotalAnswer()}
+            />
           ) : (
             <span className="question-detail-container-right-message">
               {t("Results will be shown here after you vote")}

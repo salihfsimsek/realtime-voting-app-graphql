@@ -47,6 +47,11 @@
       #vote-chart {
         width: 100%;
         height: 100%;
+
+        .vote-chart-total {
+          font-size: font.$font-2xl;
+          text-align: center;
+        }
       }
     }
   }

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 //ApexCharts
 import Chart from "react-apexcharts";
 
-const VoteChart = ({ data }) => {
+const VoteChart = ({ data, totalAns }) => {
   const [series, setSeries] = useState([]);
   const [options, setOptions] = useState({});
 
@@ -43,6 +43,7 @@ const VoteChart = ({ data }) => {
 
   return (
     <div id="vote-chart">
+      <div className="vote-chart-total">Total: {totalAns}</div>
       <Chart options={options} series={series} type="bar" />
     </div>
   );
