@@ -1570,7 +1570,7 @@
   margin-left: 1rem;
 }
 
-.submit-button {
+.button {
   border: 1px solid black;
   border-radius: 0.5rem;
   background: black;
@@ -1578,10 +1578,19 @@
   color: white;
   font-size: calc(1.2rem + 0.2vw);
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.submit-button:hover {
+.button:hover {
   background: white;
   color: black;
+}
+.button.transparent {
+  border: none;
+  background: none;
+  color: black;
+  padding: 0;
 }
 
 .loading.full {
@@ -1593,15 +1602,15 @@
   width: 100%;
   position: relative;
 }
-.loading.button {
+.loading.button-loading {
   width: 4rem;
   height: 4rem;
 }
-.loading.button .lds-ring {
+.loading.button-loading .lds-ring {
   width: 4rem !important;
   height: 4rem !important;
 }
-.loading.button .lds-ring div {
+.loading.button-loading .lds-ring div {
   width: 3.2rem;
   height: 3.2rem;
   margin: 4px;
@@ -1692,6 +1701,26 @@
   outline: none;
 }
 
+.input {
+  border: 1px solid #ccc;
+  height: 5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-size: calc(1rem + 0.2vw);
+  outline: none;
+  margin-bottom: 1rem;
+}
+.input:focus {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.label {
+  font-size: calc(1.2rem + 0.2vw);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
 .question-detail {
   height: calc(100vh - 8rem);
   position: relative;
@@ -1737,4 +1766,21 @@
 .question-detail-container-right #vote-chart .vote-chart-total {
   font-size: calc(1.8rem + 0.2vw);
   text-align: center;
+}
+
+.create-question-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.create-question-container-title {
+  font-size: calc(2rem + 0.2vw);
+  font-weight: bold;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+.create-question-container-content {
+  width: 50%;
+  min-width: 30rem;
 }/*# sourceMappingURL=index.css.map */

@@ -1,6 +1,6 @@
 @use "../Base/fontSizes" as font;
 
-.submit-button {
+.button {
   border: 1px solid black;
   border-radius: 0.5rem;
   background: black;
@@ -8,9 +8,19 @@
   color: white;
   font-size: font.$font-md;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     background: white;
     color: black;
+  }
+
+  &.transparent {
+    border: none;
+    background: none;
+    color: black;
+    padding: 0;
   }
 }
