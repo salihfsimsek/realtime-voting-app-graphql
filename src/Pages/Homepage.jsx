@@ -10,6 +10,7 @@ import { QUESTIONS_SUBSCRIPTION } from "../Queries/questions";
 //Components
 import QuestionCard from "../Components/QuestionCard";
 import Loading from "../Components/Loading";
+import SearchBox from "../Components/SearchBox";
 
 const Homepage = () => {
   const searchText = useSelector((state) => state.searchField.value);
@@ -27,6 +28,9 @@ const Homepage = () => {
     <div className="homepage">
       <div className="container pt-2">
         <div className="row">
+          <div className="homepage-searchbox col-12 d-md-none px-1">
+            <SearchBox />
+          </div>
           {data?.questions.map((question, index) => (
             <QuestionCard key={index} question={question} />
           ))}

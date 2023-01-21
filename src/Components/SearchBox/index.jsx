@@ -1,7 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 
 //i18n
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 //Redux
 import { useSelector, useDispatch } from "react-redux";
@@ -11,7 +12,7 @@ import { changeSearchField } from "../../redux/searchFieldSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
-const SearchBox = () => {
+const SearchBox = ({ className }) => {
   const data = useSelector((state) => state.searchField.value);
   const dispatch = useDispatch();
   const { t } = useTranslation();
@@ -26,7 +27,7 @@ const SearchBox = () => {
   }, [input]);
 
   return (
-    <div className="searchbox">
+    <div className={`searchbox ${className || ""}`}>
       <input
         type="text"
         placeholder={t("Search in Questions")}

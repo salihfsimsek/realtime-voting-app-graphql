@@ -16,7 +16,7 @@ const Header = () => {
         <Link to="/" className="header-title">
           Vote App
         </Link>
-        {pathname === "/" && <SearchBox />}
+        {pathname === "/" && <SearchBox className="d-none d-md-block" />}
         <Navbar />
       </div>
     </header>
