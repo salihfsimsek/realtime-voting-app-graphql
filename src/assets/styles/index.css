@@ -1544,6 +1544,8 @@
   color: #999;
   font-size: calc(1.6rem + 0.2vw);
   transition: all 0.3s ease-in-out;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .searchbox .searchbox-icon:hover {
   color: #333;

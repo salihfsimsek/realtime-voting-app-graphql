@@ -39,6 +39,8 @@
     color: #999;
     font-size: font.$font-xl;
     transition: all 0.3s ease-in-out;
+    top: 50%;
+    transform: translateY(-50%);
     &:hover {
       color: #333;
     }
